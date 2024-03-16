@@ -9,7 +9,7 @@ const user_model = require("./models/user.model")
 const db_config = require("./configs/db.config")
 const becrypt = require("bcryptjs")
 
-app.use(express.json())
+app.use(express.json()) //This is use to understand JSON file to the Node.Js
 
 /**
  * Create an admin user at the starting of the application
