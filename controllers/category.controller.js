@@ -40,6 +40,20 @@ exports.createNewCategory = async(req, res)=>{
     //Return the response of created category
 
 }
+
+//------------------------------------------------------------------------//
+//This is use show the category.//
+
+
+exports.showCategory=async(req, res)=>{
+    try {
+        const product=await category_model.find({});
+        res.status(200).json(product) //Getting all the product list.
+    } catch (error) {
+        req.status(500).json({message: error.message})
+        
+    }
+}
 //---------------------------------------------------------------//
 //This is use to delete the category.//
 
@@ -86,17 +100,4 @@ exports.updateCategory= async(req, res)=>{
         
     }
 
-}
-//------------------------------------------------------------------------//
-//This is use show the category.//
-
-
-exports.showCategory=async(req, res)=>{
-    try {
-        const product=await category_model.find({});
-        res.status(200).json(product) //Getting all the product list.
-    } catch (error) {
-        req.status(500).json({message: error.message})
-        
-    }
 }
