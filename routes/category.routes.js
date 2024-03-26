@@ -16,5 +16,5 @@ module.exports = (app)=>{
     app.put("/ecomm/api/v1/auth/category/:id",[auth_mw.verifyToken, authMw.isAdmin],category_controller.updateCategory)
 }
 module.exports = (app)=>{
-    app.get("/ecomm/api/v1/auth/categories",category_controller.showCategory)
+    app.get("/ecomm/api/v2/auth/categories",[auth_mw.verifyToken, authMw.isAdmin],category_controller.showCategory)
 }
